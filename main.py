@@ -8,8 +8,8 @@ app = FastAPI()
 async def root():
     return {"message": "Hello this is my API for finding nearest hospital",
             'me': 'if you want to get your location, please go to /me',
-            'distance':'if you want to get distance, please go to /distance',
-            'hospital': 'if you want to get nearest hospital, please go to /hospital'
+            'hospital': 'if you want to get nearest hospital, please go to /hospital',
+            'distance':'if you want to get distance, please go to /hospital/distance'
             }
 
 @app.get("/me")
