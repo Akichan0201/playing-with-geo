@@ -18,11 +18,16 @@ def get_html_json(url): # get dict from url piAPI
 def get_html_bpjs(url):  # post to get response from bpks
     address = {'jnsppk': "R", 'kdprop': "13", 'nmppk': ""}
     print(f"Sending POST request to {url} with payload: {address}")
-    response = requests.post(url, json=address)
-    print(f"Received response with status code: {response.status_code}")
-    response_data = response.json()
-    print(f"Response JSON: {response_data}")
-    return response_data
+    try:
+        response = requests.post(url, json=address)
+        print(f"Received response with status code: {response.status_code}")
+        response_data = response.json()
+        print(f"Response JSON: {response_data}")
+        return response_data
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        print(response.status_code)
+        return []
 
 def get_lat_long(): # get lat long from address
     origin = get_html_bpjs('https://faskes.bpjs-kesehatan.go.id/aplicares/Peta/getData')
