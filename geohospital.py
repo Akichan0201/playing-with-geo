@@ -32,7 +32,7 @@ def get_ip(): # get keys and value from piAPI
         'longitude' : api['longitude']}
     return new
 
-def distance_min(): # calculate distance between two points
+def distance(): # calculate distance between two points
     nearest_hospital = get_lat_long() # [{'nmppk': 'anu', 'lat':123, 'long':234}, {}, {}]
     current_location = get_ip()
     current_lat_long = (current_location['latitude'], current_location['longitude'])
@@ -43,21 +43,8 @@ def distance_min(): # calculate distance between two points
         hospital['distance'] = res
         
     x = min(nearest_hospital, key=lambda x:x['distance'])
-    print(x)
+    return x
 
-def distance_sort(): # calculate distance between two points
-    nearest_hospital = get_lat_long() # [{'nmppk': 'anu', 'lat':123, 'long':234}, {}, {}]
-    current_location = get_ip()
-    current_lat_long = (current_location['latitude'], current_location['longitude'])
-
-    for hospital in nearest_hospital:
-        nearest_lat_long = (hospital['latitude'], hospital['longitude'])
-        res =  geodesic(current_lat_long, nearest_lat_long).km
-        hospital['distance'] = res
-        
-    x = sorted(nearest_hospital, key=lambda x:x['distance'])
-    print(x)
-        
 if __name__ == "__main__":
-    # distance()
-    get_html_bpjs('https://faskes.bpjs-kesehatan.go.id/aplicares/Peta/getData')
+    distance()
+#     get_html_bpjs('https://faskes.bpjs-kesehatan.go.id/aplicares/Peta/getData')
