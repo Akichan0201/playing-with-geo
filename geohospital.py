@@ -19,7 +19,7 @@ def get_html_bpjs(url):  # post to get response from bpks
     address = {'jnsppk': "R", 'kdprop': "13", 'nmppk': ""}
     print(f"Sending POST request to {url} with payload: {address}")
     try:
-        response = requests.post(url, json=address)
+        response = requests.post(url, json=address, headers=headers, timeout=10, )
         print(f"Received response with status code: {response.status_code}")
         response_data = response.json()
         print(f"Response JSON: {response_data}")
