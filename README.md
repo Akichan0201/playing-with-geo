@@ -1,4 +1,4 @@
-# Nearest Hospital Locator API
+# Playing-with-Geo
 
 A FastAPI project that finds the nearest hospital from your location using data from the Indonesian Ministry of Health API. It uses geolocation logic with Geopy and is deployed on Vercel.
 
