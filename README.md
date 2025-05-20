@@ -1,40 +1,57 @@
-# PLAYING WITH GEO
+# Nearest Hospital Locator API
 
-A FastAPI project that finds the nearest hospital from your location using data from the Indonesian Ministry of Health's API. It uses geolocation logic with Geopy and is deployed on Vercel.
+A FastAPI project that finds the nearest hospital from your location using data from the Indonesian Ministry of Health API. It uses geolocation logic with Geopy and is deployed on Vercel.
 
 ## STAR Summary
 
-**Situation:** Finding nearby hospitals quickly can be critical, but many sources do not offer location-based filtering in a simple API format.
+**Situation:** Locating nearby hospitals efficiently is important, but existing sources often lack simple and location-aware APIs.
 
-**Task:** Build an API that returns the nearest hospitals from a given location by using official health data and geolocation tools.
+**Task:** Build an API that takes user coordinates and returns a list of the nearest hospitals using official data.
 
 **Action:**  
-- Fetched hospital data using the official API from the Indonesian Ministry of Health  
-- Calculated distance from user's coordinates to hospitals using Geopy  
-- Built a FastAPI backend to serve the nearest results as an endpoint  
-- Deployed the API to Vercel and configured it using `vercel.json`
+- Retrieved hospital data using the Ministry of Health's open API  
+- Calculated distances using Geopy based on latitude and longitude  
+- Built an API with FastAPI to serve the closest hospital data  
+- Deployed the application to Vercel with `vercel.json` for configuration
 
 **Result:**  
-Created a working and deployable API that returns the nearest hospitals based on user-provided coordinates. This API is publicly available at [playing-with-geo.vercel.app](https://playing-with-geo.vercel.app)
+An accessible and fast API that returns nearby hospital information based on geolocation. It is publicly available at [playing-with-geo.vercel.app](https://playing-with-geo.vercel.app)
 
 ## Features
 
-- Retrieves hospital data from Kementerian Kesehatan API
-- Calculates nearest hospitals using latitude and longitude
-- Returns JSON data via FastAPI endpoint
-- Deployed and live at: [playing-with-geo.vercel.app]
+- Connects to the Ministry of Health API to fetch hospital data
+- Uses Geopy to calculate nearest hospitals by coordinates
+- Serves a JSON response through FastAPI
+- Deployed on Vercel at: [playing-with-geo.vercel.app](https://playing-with-geo.vercel.app)
 
 ## How to Use
+
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/Akichan0201/nearest-hospital-api.git
 cd nearest-hospital-api
-pip install -r requirements.txt
+```
+
+### 2. Install dependencies
+``` bash
+pip install fastapi geopy uvicorn requests
+```
+
+### 3. Run the server locally
+``` bash
 uvicorn main:app --reload
 ```
-then access this:
+
+### 4. Access the Endpoint
+```bash
 http://127.0.0.1:8000/nearest-hospital?lat=YOUR_LAT&lon=YOUR_LON
+```
+
+## Deployment
+The API is deployed on Vercel and configured using vercel.json. You can try the live version here:
+playing-with-geo.vercel.app
 
 ---
 
-Let me know if you want to add Swagger UI support, more filters (like hospital type), or a frontend to consume the API.
+Let me know if you want to add sample responses, error handling, or support for more location-based features.
