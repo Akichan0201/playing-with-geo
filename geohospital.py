@@ -67,6 +67,5 @@ def distance(): # calculate distance between two points
     return x
 
 if __name__ == "__main__":
-    # distance()
+    distance()
     # get_html_bpjs('https://faskes.bpjs-kesehatan.go.id/aplicares/Peta/getData')
-    print(get_ip())
