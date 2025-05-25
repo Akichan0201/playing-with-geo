@@ -26,7 +26,7 @@ def get_html_bpjs(url):  # post to get response from bpks
         return response_data
     except Exception as e:
         print(f"An error occurred: {e}")
-        print(response.status_code)
+        # print(response.status_code)
         return []
 
 def get_lat_long(): # get lat long from address
@@ -68,4 +68,5 @@ def distance(): # calculate distance between two points
 
 if __name__ == "__main__":
     # distance()
-    get_html_bpjs('https://faskes.bpjs-kesehatan.go.id/aplicares/Peta/getData')
+    # get_html_bpjs('https://faskes.bpjs-kesehatan.go.id/aplicares/Peta/getData')
+    print(get_ip())

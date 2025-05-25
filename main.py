@@ -24,5 +24,4 @@ async def hospital():
 async def get_distance():
     return distance()
 
-# if __name__ == "__main__":
     
