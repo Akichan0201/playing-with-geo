@@ -65,7 +65,3 @@ def distance(): # calculate distance between two points
     x = min(nearest_hospital, key=lambda x:x['distance'])
     print(f"Nearest hospital is {x['nmppk']} with distance of {x['distance']} km")
     return x
-
-if __name__ == "__main__":
-    distance()
-    # get_html_bpjs('https://faskes.bpjs-kesehatan.go.id/aplicares/Peta/getData')
