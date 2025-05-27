@@ -1,16 +1,13 @@
 from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
 from geohospital import get_lat_long, distance, get_ip
 
 
 app = FastAPI()
 
-@app.get("/")
+@app.get("/", response_class=HTMLResponse)
 async def root():
-    return {"message": "Hello this is my API for finding nearest hospital",
-            'me': 'if you want to get your location, please go to /me',
-            'hospital': 'if you want to get nearest hospital, please go to /hospital',
-            'distance':'if you want to get distance, please go to /hospital/distance'
-            }
+    return "<h1>Hello</h1>"
 
 @app.get("/me")
 async def get_api():
