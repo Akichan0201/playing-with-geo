@@ -12,4 +12,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY main.py geohospital.py .
 
 # Set the default command to run the main script
-CMD ["fastapi", "dev", "main.py"]
+CMD ["python", "main.py"]
