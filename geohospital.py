@@ -1,4 +1,5 @@
 import requests
+# pyrefly: ignore [missing-import]
 from geopy.distance import geodesic
 
 
@@ -16,7 +17,8 @@ def get_html_bpjs(url):  # post to get response from bpks
     try:
         response = requests.post(url, json=payload, headers=headers, timeout=10, )
         response_data = response.json()
-        return response_data
+        data = {"total": len(response_data)}
+        return data
     
     except Exception as e:
         print(f"An error occurred: {e}")
