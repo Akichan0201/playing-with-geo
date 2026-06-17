@@ -53,5 +53,3 @@ The API is deployed on Vercel and configured using vercel.json. You can try the 
 playing-with-geo.vercel.app
 
 ---
-
-Let me know if you want to add sample responses, error handling, or support for more location-based features.
